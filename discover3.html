@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" href="/assets/icon-removebg-preview.png">
+    <title>Discover</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        font-family: "Roboto";
+    }
+    body {
+        height: 100vh;
+        background-color: #FAFAFA;
+    }
+    header {
+        background-color: #0D0D0D;
+        height: 80px;
+        width: 100%;
+        position: sticky;
+        top: 0;
+        display: flex;
+        align-items: center; 
+        justify-content: space-between; 
+        padding: 0 20px; 
+    }
+    nav ul {
+        list-style-type: none;
+        display: flex;
+    }
+    nav ul li {
+        padding: 0 10px;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        margin-right: 10px;
+    }
+    img{
+        width: 100%;
+        height: 50px;
+    }
+    .logo{
+        cursor: pointer;
+    }
+    main{
+        margin: 10px auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 1260px;
+    }
+    .white{
+        margin: 15px 10px;
+    }
+    .white a{
+        color: black;
+        width: 600px;
+        height: 190px;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        display: grid;
+        grid-template-columns: 40px 170px 370px;
+        align-items: center;
+        padding-left: 15px;
+        border-radius: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition: 0.4s;
+    }
+    .white a:hover{
+        background-color: #a52929;
+        color: white;
+    }
+    main img{
+        width: 146px;
+        height: 170px;
+        border-radius: 15px;
+    }
+    p{
+        font-size: 18px;
+    }
+    span{
+        font-weight: 500;
+    }
+    main h1{
+        font-size: 28px;
+    }
+    .number{
+        padding-top: 10px;
+        align-self: start;
+        font-weight: 500;
+    }
+    .buttons{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 70px;
+    }
+    .buttons button{
+        padding: 7px 14px;
+        margin-left: 20px;
+        margin-right: 20px;
+        border: none;
+        background-color: #7D0A0A;
+        color: white;
+        border-radius: 5px;
+        margin-top: 10px;
+        margin-bottom: 150px;
+        transition: 0.15s;
+        cursor: pointer;
+    }
+    button:hover{
+        opacity: 0.85;
+    }
+    .sort{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 50px;
+    }
+    .sort div{
+        height: 40px;
+        display: grid;
+        align-items: center;
+        margin: 0;
+        text-align: center;
+        margin-right: -2px;
+    }
+    .search {
+        width: 300px;
+        padding: 7px 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 20px;
+        background-color: rgb(221, 221, 221);
+    }
+    .searchbox{
+        display: flex;
+        flex-direction: row;
+        margin-top: 10px;
+        text-align: center;
+    }
+    .searchbutt button{
+        padding: 10px 15px;
+        font-size: 16px;
+        font-weight: 500;
+        border: none;
+        background-color: #7D0A0A;
+        color: white;
+        cursor: pointer;
+    }
+    .hehe{
+        display: grid;
+        grid-template-columns: 1fr 0px;
+        padding-left: 53px;
+        padding-right: 0;
+    }
+    .haha{
+        display: grid;
+        grid-template-columns: 100px 1fr 1fr;
+    }
+    .haha div{
+        margin-right: 10px;
+    }
+    input::placeholder{
+        font-size: 18px;
+    }
+    input:focus{
+        outline: none;
+    }
+    .ace{
+        width: 80px;
+        font-weight: 500;
+    }
+    .john{
+        width: 120px;
+        background-color: #7D0A0A;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+    }
+    .nieva{
+        width: 60px;
+        background-color: #7D0A0A;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+    }
+    .sort span{
+        font-size: 14px;
+    }
+    .title{
+        height: 45px;
+        display: grid;
+        grid-template-columns: repeat(2, 250px);
+    }
+    .title button{
+        font-size: 16px;
+        margin-bottom: 5px;
+        font-weight: 500;
+        border-radius: 3px;
+    }
+    .list{
+        padding: 9.5px 9.5px;
+        background-color: #000000;
+        color: white;
+        border: none;
+        transition: 0.15s;
+        cursor: pointer;
+    }
+    .list:hover{
+        padding: 12px;
+    }
+    .list.added{
+        font-size: 10.5px;
+        background-color: rgb(82, 82, 82);
+        padding: 11px 9.5px;
+        font-weight: 600;
+    }
+</style>
+<body>
+    <header>
+        <div class="logo"><img src="assets/capture.PNG"></div>
+        <nav>
+            <ul>
+                <li><a href="/discover.html">Discover</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+                <li><a href="/list.html">My List</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/signin.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1 style="text-align: center; padding-top: 40px;">Discover</h1>
+    <div class="sort">
+        <div class="hehe">
+            <div class="searchbox">
+                <input class="search" type="search" placeholder="Search">
+            </div>
+            <div class="searchbutt">
+                <button class="searchbut">Search</button>
+            </div>
+        </div>
+        <div class="haha">
+            <div class="ace"><p>Sorted By</p></div>
+            <div class="john"><p>Popularity <span>&#x25BC;</span></p></div>
+            <div class="nieva"><p>All <span>&#x25BC;</span></p></div>
+        </div>
+    </div>
+    <main>
+        <div class="white">
+            <a href="https://overwatch.blizzard.com/en-us/">
+                <div class="number"><p style="font-size: 20px;">#13</p></div>
+                <div class="picture">
+                    <img src="assets/over.jpg">
+                </div>
+                <div>
+                    <div class="title" style="margin-bottom: 10px;">
+                        <div>
+                            <h1>Overwatch</h1>
+                        </div>
+                        <div>
+                            <button class="list">ADD TO LIST</button>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 5px;"><p><span>RELEASE DATE:</span> 24 May, 2016</p></div>
+                    <div><p>Overwatch is a multimedia franchise centered on a series of online multiplayer first-person shooter (FPS) video games developed by Blizzard Entertainment.</p></div>
+                </div>
+            </a>
+        </div>
+        <div class="white">
+            <a href="https://store.rockstargames.com/game/buy-gta-v">
+                <div class="number"><p style="font-size: 20px;">#2</p></div>
+                <div class="picture">
+                    <img src="assets/gta.jpg">
+                </div>
+                <div>
+                    <div class="title" style="margin-bottom: 10px;">
+                        <div>
+                            <h1>Grand Theft Auto V</h1>
+                        </div>
+                        <div>
+                            <button class="list">ADD TO LIST</button>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 5px;"><p><span>RELEASE DATE:</span> 17 Sep 2013</p></div>
+                    <div><p>The GTA V Universe GTA V is set in the city of Los Santos and Blaine County, in the fictional state of San Andreas. Like previous GTA titles.</p></div>
+                </div>
+            </a>
+        </div>
+        <div class="white">
+            <a href="https://pubg.com/en-na/main">
+                <div class="number"><p style="font-size: 20px;">#3</p></div>
+                <div class="picture">
+                    <img src="assets/pubg.jpg">
+                </div>
+                <div>
+                    <div class="title" style="margin-bottom: 10px;">
+                        <div>
+                            <h1>PUBG</h1>
+                        </div>
+                        <div>
+                            <button class="list">ADD TO LIST</button>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 5px;"><p><span>RELEASE DATE:</span> 20 Dec, 2017</p></div>
+                    <div><p>PUBG: Battlegrounds (previously known as PlayerUnknown's Battlegrounds) is a battle royale game developed by PUBG Studios and published by Krafton.</p></div>
+                </div>
+            </a>
+        </div>
+        <div class="white">
+            <a href="https://store.steampowered.com/app/1091500/Cyberpunk_2077/">
+                <div class="number"><p style="font-size: 20px;">#4</p></div>
+                <div class="picture">
+                    <img src="assets/cyber.jpg">
+                </div>
+                <div>
+                    <div class="title" style="margin-bottom: 10px;">
+                        <div>
+                            <h1>Cyberpunk 2077</h1>
+                        </div>
+                        <div>
+                            <button class="list">ADD TO LIST</button>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 5px;"><p><span>RELEASE DATE:</span> 10 Dec, 2020</p></div>
+                    <div><p>Cyberpunk 2077 is a 2020 action role-playing video game set in the Cyberpunk universe. The game takes place in Night City, an open world where players can explore. </p></div>
+                </div>
+            </a>
+        </div>
+        <div class="white">
+            <a href="https://www.leagueoflegends.com/en-us/">
+                <div class="number"><p style="font-size: 20px;">#5</p></div>
+                <div class="picture">
+                    <img src="assets/lol.jpg">
+                </div>
+                <div>
+                    <div class="title" style="margin-bottom: 10px;">
+                        <div>
+                            <h1>League Of Legends</h1>
+                        </div>
+                        <div>
+                            <button class="list">ADD TO LIST</button>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 5px;"><p><span>RELEASE DATE:</span> 27 Oct, 2009</p></div>
+                    <div><p>League of Legends is a team-based game with over 140 champions to make epic plays with. Play for free today on your Mac or PC.</p></div>
+                </div>
+            </a>
+        </div>
+        <div class="white">
+            <a href="https://play.google.com/store/apps/details?id=com.ea.game.pvzfree_row">
+                <div class="number"><p style="font-size: 20px;">#6</p></div>
+                <div class="picture">
+                    <img src="assets/pvz.jpg">
+                </div>
+                <div>
+                    <div class="title" style="margin-bottom: 10px;">
+                        <div>
+                            <h1>Plants vs Zombies</h1>
+                        </div>
+                        <div>
+                            <button class="list">ADD TO LIST</button>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 5px;"><p><span>RELEASE DATE:</span> 05 May, 2009</p></div>
+                    <div><p>The game follows the story of homeowners using plants to defend against a zombie invasion led by Dr. Edgar George Zomboss.</p></div>
+                </div>
+            </a>
+        </div>
+    </main>
+    <div class="buttons">
+        <div><button class="prev"><p> Previous</p></button></div>
+        <div><button class="one"><p>1</p></button></div>
+        <div><button class="two"><p>2</p></button></div>
+        <div><button class="three" style="background-color: #4B0200;"><p>3</p></button></div>
+        <div><button class="next"><p>Next</p></button></div>
+    </div>
+    <hr style="margin: 10px;">
+    <footer">
+      <p style="font-size: 12px; color: black; text-align: center;">© 2024, GameMaven, All Rights Reserved</p>
+    </footer>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+        const editButtons = document.querySelectorAll('.edit');
+        const listButtons = document.querySelectorAll('.list');
+        const searchBtn = document.querySelector(".searchbut")
+
+        listButtons.forEach(function(button) {
+        button.addEventListener('click', function(event) {
+                event.preventDefault();
+                if(button.innerHTML === "ADD TO LIST"){
+                    button.innerHTML = "REMOVE FROM LIST"
+                    button.classList.add("added");
+                } else {
+                    button.innerHTML = "ADD TO LIST"
+                    button.classList.remove("added");
+                }
+            });
+        });
+
+        searchBtn.addEventListener("click", function(){
+            window.location.href = "discover.html"
+        })
+    });
+
+    document.querySelector(".one").addEventListener("click", function(){
+        window.location.href = "discover.html"
+    })
+    document.querySelector(".two").addEventListener("click", function(){
+        window.location.href = "discover2.html"
+    })
+    document.querySelector(".three").addEventListener("click", function(){
+        window.location.href = "discover3.html"
+    })
+    document.querySelector(".prev").addEventListener("click", function(){
+        window.location.href = "discover2.html"
+    })
+</script>
+</html>

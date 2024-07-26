@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" href="/assets/icon-removebg-preview.png">
+    <title>Blogs</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        font-family: "Roboto";
+    }
+    body {
+        height: 100vh;
+        background-color: #FAFAFA;
+    }
+    header {
+        background-color: #0D0D0D;
+        height: 80px;
+        width: 100%;
+        position: sticky;
+        top: 0;
+        display: flex;
+        align-items: center; 
+        justify-content: space-between; 
+        padding: 0 20px; 
+    }
+    nav ul {
+        list-style-type: none;
+        display: flex;
+    }
+    nav ul li {
+        padding: 0 10px;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        margin-right: 10px;
+    }
+    img{
+        width: 100%;
+        height: 50px;
+    }
+    .logo{
+        cursor: pointer;
+    }
+    .search {
+        width: 350px;
+        padding: 8px 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 20px;
+        background-color: rgb(221, 221, 221);
+        margin-top: 50px;
+        margin-bottom: 10px;
+    }
+    .searchbox{
+        margin-top: 10px;
+        text-align: center;
+    }
+    input::placeholder{
+        font-size: 18px;
+    }
+    input:focus{
+        outline: none;
+    }
+    main{
+        margin: 10px auto;
+        width: 80%;
+        max-width: 1500px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .blogs{
+        display: grid;
+        width: 465px;
+        grid: 1fr 40px 80px;
+        margin-bottom: 70px;
+    }
+    main img{
+        width: 461px;
+        height: 259px;
+    }
+    main img:hover{
+        opacity: 0.85;
+    }
+    .title{
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    .description{
+        font-size: 18px;
+    }
+    button{
+        background-color: #810000;
+        color: white;
+        font-size: 24px;
+        padding: 15px 30px;
+        border: none;
+        cursor: pointer;
+    }
+    .button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 100px;
+        transition: 0.15s;
+    }
+    .button:hover{
+        opacity: 0.85;
+    }
+    .searchbut{
+        padding: 12px 15px 10px 15px;
+        font-size: 16px;
+        font-weight: 500;
+        border: none;
+        background-color: #7D0A0A;
+        color: white;
+        cursor: pointer;
+        margin-left: -10px;
+    }
+</style>
+<body>
+    <header>
+        <div class="logo"><img src="assets/capture.PNG"></div>
+        <nav>
+            <ul>
+                <li><a href="/discover.html">Discover</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+                <li><a href="/list.html">My List</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/signin.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1 style="text-align: center; padding-top: 40px;">Blog</h1>
+    <div class="searchbox"><input class="search" type="search" placeholder="Search"><button class="searchbut">Search</button></div>
+    <main>
+      <div class="blogs roblox">
+        <div><a href="https://blog.roblox.com/2024/03/roblox-ml-engineer-xiao-yu-receives-test-time-award/"><img src="assets/roblox.png"></a></div>
+        <div class="title"><p>Roblox ML Engineer Xiao Yu Receives Test of Time Award</p></div>
+        <div class="description"><p>We are pleased to congratulate Roblox machine learning engineer Xiao Yu and his co-authors on receiving the Test of Time award at the 17th ACM International Conference on Web Search and Data Mining (WSDM 2024).</p></div>
+      </div>
+      <div class="blogs southpark">
+        <div><a href="https://rectifygaming.com/south-park-snow-day-pre-orders"><img src="assets/cartoon.png"></a></div>
+        <div class="title"><p>South Park: Snow Day Is Surprisingly Cheap, Preorders Live Now</p></div>
+        <div class="description"><p>South Park: Snow Day! is nothing like the two South Park RPGs that preceded it, with its 3D animated aesthetic, its co-op battle gameplay, and even its surprisingly cheap $30 price tag. </p></div>
+      </div>
+      <div class="blogs stardew">
+        <div><a href="https://www.ign.com/wikis/stardew-valley/Stardew_Valley_1.6_Update"><img src="assets/stardew.png"></a></div>
+        <div class="title"><p>Stardew Valley update 1.6 is live with a treasure trove of content | VG247</p></div>
+        <div class="description"><p>The update boasts over 500 additions and tweaks, ranging from new fish, pets, neighbors, and landscape beautification alongside tons of fixes and balancing, multiplayer, and quality-of-life improvements.</p></div>
+      </div>
+      <div class="blogs lethal">
+        <div><a href="https://www.gamedeveloper.com/business/lethal-company-sold-an-estimated-10-million-copies"><img src="assets/lethal.png"></a></div>
+        <div class="title"><p>Lethal Company sold an estimated 10 million copies</p></div>
+        <div class="description"><p>2023's breakout horror hit Lethal Company is believed to have sold 10 million copies since its Early Access release in mid-October.</p></div>
+      </div>
+      <div class="blogs terraria">
+        <div><a href="https://terraria.org/news/terraria-labor-of-love-is-out-now-"><img src="assets/terraria.png"></a></div>
+        <div class="title"><p>Terraria: Labor of Love is Out Now!</p></div>
+        <div class="description"><p>We appreciate each and every one of you, and we wanted to share a little love letter from the team to you below - thank you so much for supporting us over the years... and here's to many more!!!</p></div>
+      </div>
+      <div class="blogs warzone">
+        <div><a href="https://www.callofduty.com/blog/2024/03/call-of-duty-warzone-mobile-official-live-worldwide-announcement"><img src="assets/warzone.png"></a></div>
+        <div class="title"><p>Warzone Mobile is Officially Live Worldwide</p></div>
+        <div class="description"><p>It’s time to deploy! Experience Battle Royale with fan-favorite maps Verdansk and Rebirth Island, drop straight into the action with Multiplayer modes and maps, play your way with controls customization, and continue leveling up your XP and weapons across Call of Duty: Warzone and Call of Duty: Modern Warfare III with shared progression.</p></div>
+      </div>
+    </main>
+    <div class="button"><div><button class="next">NEXT</button></div></div>
+    <hr style="margin: 10px;">
+    <footer">
+      <p style="font-size: 12px; color: black; text-align: center;">© 2024, GameMaven, All Rights Reserved</p>
+    </footer>
+</body>
+<script>
+    document.querySelector(".searchbut").addEventListener("click", function(){
+        window.location.href = "blog.html"
+    })
+    
+    document.querySelector(".next").addEventListener("click", function(){
+        window.location.href = "blog.html"
+    })
+</script>
+</html>

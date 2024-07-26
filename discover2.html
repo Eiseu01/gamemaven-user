@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" href="/assets/icon-removebg-preview.png">
+    <title>Discover</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        font-family: "Roboto";
+    }
+    body {
+        height: 100vh;
+        background-color: #FAFAFA;
+    }
+    header {
+        background-color: #0D0D0D;
+        height: 80px;
+        width: 100%;
+        position: sticky;
+        top: 0;
+        display: flex;
+        align-items: center; 
+        justify-content: space-between; 
+        padding: 0 20px; 
+    }
+    nav ul {
+        list-style-type: none;
+        display: flex;
+    }
+    nav ul li {
+        padding: 0 10px;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        margin-right: 10px;
+    }
+    img{
+        width: 100%;
+        height: 50px;
+    }
+    .logo{
+        cursor: pointer;
+    }
+    main{
+        margin: 10px auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 1260px;
+    }
+    .white{
+        margin: 15px 10px;
+    }
+    .white a{
+        color: black;
+        width: 600px;
+        height: 190px;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        display: grid;
+        grid-template-columns: 40px 170px 370px;
+        align-items: center;
+        padding-left: 15px;
+        border-radius: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition: 0.4s;
+    }
+    .white a:hover{
+        background-color: #a52929;
+        color: white;
+    }
+    main img{
+        width: 146px;
+        height: 170px;
+        border-radius: 15px;
+    }
+    p{
+        font-size: 18px;
+    }
+    span{
+        font-weight: 500;
+    }
+    main h1{
+        font-size: 28px;
+    }
+    .number{
+        padding-top: 10px;
+        align-self: start;
+        font-weight: 500;
+    }
+    .buttons{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 70px;
+    }
+    .buttons button{
+        padding: 7px 14px;
+        margin-left: 20px;
+        margin-right: 20px;
+        border: none;
+        background-color: #7D0A0A;
+        color: white;
+        border-radius: 5px;
+        margin-top: 10px;
+        margin-bottom: 150px;
+        transition: 0.15s;
+        cursor: pointer;
+    }
+    button:hover{
+        opacity: 0.85;
+    }
+    .sort{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 50px;
+    }
+    .sort div{
+        height: 40px;
+        display: grid;
+        align-items: center;
+        margin: 0;
+        text-align: center;
+        margin-right: -2px;
+    }
+    .search {
+        width: 300px;
+        padding: 7px 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 20px;
+        background-color: rgb(221, 221, 221);
+    }
+    .searchbox{
+        display: flex;
+        flex-direction: row;
+        margin-top: 10px;
+        text-align: center;
+    }
+    .searchbutt button{
+        padding: 10px 15px;
+        font-size: 16px;
+        font-weight: 500;
+        border: none;
+        background-color: #7D0A0A;
+        color: white;
+        cursor: pointer;
+    }
+    .hehe{
+        display: grid;
+        grid-template-columns: 1fr 0px;
+        padding-left: 53px;
+        padding-right: 0;
+    }
+    .haha{
+        display: grid;
+        grid-template-columns: 100px 1fr 1fr;
+    }
+    .haha div{
+        margin-right: 10px;
+    }
+    input::placeholder{
+        font-size: 18px;
+    }
+    input:focus{
+        outline: none;
+    }
+    .ace{
+        width: 80px;
+        font-weight: 500;
+    }
+    .john{
+        width: 120px;
+        background-color: #7D0A0A;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+    }
+    .nieva{
+        width: 60px;
+        background-color: #7D0A0A;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+    }
+    .sort span{
+        font-size: 14px;
+    }
+    .title{
+        height: 45px;
+        display: grid;
+        grid-template-columns: repeat(2, 250px);
+    }
+    .title button{
+        font-size: 16px;
+        margin-bottom: 5px;
+        font-weight: 500;
+        border-radius: 3px;
+    }
+    .list{
+        padding: 9.5px 9.5px;
+        background-color: #000000;
+        color: white;
+        border: none;
+        transition: 0.15s;
+        cursor: pointer;
+    }
+    .list:hover{
+        padding: 12px;
+    }
+    .list.added{
+        font-size: 10.5px;
+        background-color: rgb(82, 82, 82);
+        padding: 11px 9.5px;
+        font-weight: 600;
+    }
+</style>
+<body>
+    <header>
+        <div class="logo"><img src="assets/capture.PNG"></div>
+        <nav>
+            <ul>
+                <li><a href="/discover.html">Discover</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+                <li><a href="/list.html">My List</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/signin.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1 style="text-align: center; padding-top: 40px;">Discover</h1>
+    <div class="sort">
+        <div class="hehe">
+            <div class="searchbox">
+                <input class="search" type="search" placeholder="Search">
+            </div>
+            <div class="searchbutt">
+                <button class="searchbut">Search</button>
+            </div>
+        </div>
+        <div class="haha">
+            <div class="ace"><p>Sorted By</p></div>
+            <div class="john"><p>Popularity <span>&#x25BC;</span></p></div>
+            <div class="nieva"><p>All <span>&#x25BC;</span></p></div>
+        </div>
+    </div>
+    <main>
+        <div class="white">
+            <a href="https://www.nintendo.com/us/store/products/super-smash-bros-ultimate-switch/">
+                <div class="number"><p style="font-size: 20px;">#7</p></div>
+                <div class="picture">
+                    <img src="assets/mario.jpg">
+                </div>
+                <div>
+                    <div class="title" style="margin-bottom: 10px;">
+                        <div>
+                            <h1>Super Smash Bros</h1>
+                        </div>
+                        <div>
+                            <button class="list">ADD TO LIST</button>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 5px;"><p><span>RELEASE DATE:</span> 21 Jan, 1999</p></div>
+                    <div><p>Super Smash Bros. is a crossover platform fighting game series published by Nintendo. The series was created by Masahiro Sakurai, who has directed every game in the series. </p></div>
+                </div>
+            </a>
+        </div>
+        <div class="white">
+            <a href="https://store.steampowered.com/app/1172470/Apex_Legends/">
+                <div class="number"><p style="font-size: 20px;">#8</p></div>
+                <div class="picture">
+                    <img src="assets/apex.jpg">
+                </div>
+                <div>
+                    <div class="title" style="margin-bottom: 10px;">
+                        <div>
+                            <h1>Apex Legends</h1>
+                        </div>
+                        <div>
+                            <button class="list">ADD TO LIST</button>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 5px;"><p><span>RELEASE DATE:</span> 04 Feb, 2019</p></div>
+                    <div><p>Apex Legends is a free-to-play battle royale-hero shooter game developed by Respawn Entertainment and published by Electronic Arts.</p></div>
+                </div>
+            </a>
+        </div>
+        <div class="white">
+            <a href="https://www.fortnite.com/">
+                <div class="number"><p style="font-size: 20px;">#9</p></div>
+                <div class="picture">
+                    <img src="assets/fort.jpg">
+                </div>
+                <div>
+                    <div class="title" style="margin-bottom: 10px;">
+                        <div>
+                            <h1>Fortnite</h1>
+                        </div>
+                        <div>
+                            <button class="list">ADD TO LIST</button>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 5px;"><p><span>RELEASE DATE:</span> 26 Jan, 2024</p></div>
+                    <div><p> It is a battle royale game where 100 players are dropped into a single map and compete alone or in groups. Players can create, play, and battle with friends for free in Fortnite.</p></div>
+                </div>
+            </a>
+        </div>
+        <div class="white">
+            <a href="https://store.steampowered.com/app/945360/Among_Us/">
+                <div class="number"><p style="font-size: 20px;">#10</p></div>
+                <div class="picture">
+                    <img src="assets/amogus.jpg">
+                </div>
+                <div>
+                    <div class="title" style="margin-bottom: 10px;">
+                        <div>
+                            <h1>Among Us</h1>
+                        </div>
+                        <div>
+                            <button class="list">ADD TO LIST</button>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 5px;"><p><span>RELEASE DATE:</span> 15 Jun, 2018</p></div>
+                    <div><p>Among Us is a multiplayer game for four to fifteen players.Up to three players are randomly and secretly chosen to be the Impostors each round. </p></div>
+                </div>
+            </a>
+        </div>
+        <div class="white">
+            <a href="https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/">
+                <div class="number"><p style="font-size: 20px;">#11</p></div>
+                <div class="picture">
+                    <img src="assets/red.jpg">
+                </div>
+                <div>
+                    <div class="title" style="margin-bottom: 10px;">
+                        <div>
+                            <h1 style="font-size: 22px;">Red Dead Redemption II</h1>
+                        </div>
+                        <div>
+                            <button class="list">ADD TO LIST</button>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 5px;"><p><span>RELEASE DATE:</span> 26 Oct, 2018</p></div>
+                    <div><p>Red Dead Redemption 2 is an epic tale of outlaw Arthur Morgan and the infamous Van der Linde gang, on the run across America at the dawn of the modern age.</p></div>
+                </div>
+            </a>
+        </div>
+        <div class="white">
+            <a href="https://www.minecraft.net/en-us/download">
+                <div class="number"><p style="font-size: 20px;">#12</p></div>
+                <div class="picture">
+                    <img src="assets/mine.png">
+                </div>
+                <div>
+                    <div class="title" style="margin-bottom: 10px;">
+                        <div>
+                            <h1>Minecraft</h1>
+                        </div>
+                        <div>
+                            <button class="list">ADD TO LIST</button>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 5px;"><p><span>RELEASE DATE:</span> 18 Nov, 2011</p></div>
+                    <div><p>Minecraft is a game made up of blocks, creatures, and community. Blocks can be used to reshape the world or build fantastical creations.</p></div>
+                </div>
+            </a>
+        </div>
+    </main>
+    <div class="buttons">
+        <div><button class="prev"><p> Previous</p></button></div>
+        <div><button class="one"><p>1</p></button></div>
+        <div><button class="two" style="background-color: #4B0200;"><p>2</p></button></div>
+        <div><button class="three"><p>3</p></button></div>
+        <div><button class="next"><p>Next</p></button></div>
+    </div>
+    <hr style="margin: 10px;">
+    <footer">
+      <p style="font-size: 12px; color: black; text-align: center;">© 2024, GameMaven, All Rights Reserved</p>
+    </footer>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+        const editButtons = document.querySelectorAll('.edit');
+        const listButtons = document.querySelectorAll('.list');
+        const searchBtn = document.querySelector(".searchbut")
+
+        listButtons.forEach(function(button) {
+        button.addEventListener('click', function(event) {
+                event.preventDefault();
+                if(button.innerHTML === "ADD TO LIST"){
+                    button.innerHTML = "REMOVE FROM LIST"
+                    button.classList.add("added");
+                } else {
+                    button.innerHTML = "ADD TO LIST"
+                    button.classList.remove("added");
+                }
+            });
+        });
+
+        searchBtn.addEventListener("click", function(){
+            window.location.href = "discover.html"
+        })
+    });
+
+    document.querySelector(".one").addEventListener("click", function(){
+        window.location.href = "discover.html"
+    })
+    document.querySelector(".two").addEventListener("click", function(){
+        window.location.href = "discover2.html"
+    })
+    document.querySelector(".three").addEventListener("click", function(){
+        window.location.href = "discover3.html"
+    })
+    document.querySelector(".prev").addEventListener("click", function(){
+        window.location.href = "discover.html"
+    })
+    document.querySelector(".next").addEventListener("click", function(){
+        window.location.href = "discover3.html"
+    })
+</script>
+</html>
